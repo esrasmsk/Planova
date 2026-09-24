@@ -2312,37 +2312,47 @@ html {
 }
 
 /* ================================================================ RENKLI TEMA == */
+/* Tatli ama goz yormayan: gri tonlu "tozlu" pasteller (tozlu gul, adacayi, lavanta grisi,
+   tereyagi, seftali, puslu mavi), sicak krem kagit ve murdum yazi. Sadeligi kiran el yapimi
+   dokunuslar: pötikareli masa ortusu, kagit dokusu, washi bant, dikisli kumas sekmeler,
+   kose cicek dali, kalpcik/cicek deseni. */
 
 .tema-renkli {
-  --kagit: #fffdfb;
-  --kagit-kenar: #f1e4f2;
-  --cizgi: #eadff8;
-  --marj: #ffa3c6;
-  --murekkep: #3a2d4f;
-  --murekkep-soluk: #8b7fa3;
-  --kursun: #b9aecb;
+  --kagit: #fbf5ef;
+  --kagit-kenar: #eddcd8;
+  --cizgi: #ecdcd6;
+  --marj: #e3b3bf;
+  --murekkep: #574552;
+  --murekkep-soluk: #9a8793;
+  --kursun: #d2c1c9;
 
-  --kil: #ff7a8a;
-  --mavi: #5aa9ff;
-  --erik: #a78bfa;
-  --hardal: #ffbe3d;
-  --adaci: #3fcf9e;
-  --zeytin: #ff9f5a;
-  --ayar-renk: #9d8ccf;
+  --kil: #c9788f;
+  --mavi: #7f9fbf;
+  --erik: #a18cc0;
+  --hardal: #c9a25a;
+  --adaci: #7fae95;
+  --zeytin: #cf957a;
+  --ayar-renk: #9a8bb3;
+
+  /* Tozlu pasteller (sekmeler ve vurgular) */
+  --tozlu-gul: #e3b7c1;
+  --tozlu-mavi: #bccfe0;
+  --tozlu-tereyagi: #ead9aa;
+  --tozlu-adacayi: #bfd6c5;
+  --tozlu-seftali: #e8c7b5;
+  --tozlu-lavanta: #cdc3e0;
 
   --baslik: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
-  --vurgu: linear-gradient(135deg, #ff8fab 0%, #b69cff 100%);
+  --vurgu: linear-gradient(135deg, #cf8fa2 0%, #a893c9 100%);
 }
 
-/* Zemin ve defter */
+/* Masa: tozlu gul pötikare ortu, kenarlari hafif koyu */
 .masa.tema-renkli {
   background:
-    radial-gradient(circle at 30% 40%, #ff8fab 0 3px, transparent 3.5px) 0 0 / 150px 150px,
-    radial-gradient(circle at 80% 20%, #ffd166 0 3px, transparent 3.5px) 0 0 / 170px 170px,
-    radial-gradient(circle at 60% 80%, #7bdcb5 0 3px, transparent 3.5px) 0 0 / 190px 190px,
-    radial-gradient(circle at 10% 70%, #72b7ff 0 2.5px, transparent 3px) 0 0 / 130px 130px,
-    radial-gradient(circle, rgba(255, 255, 255, 0.55) 0 1.5px, transparent 2px) 0 0 / 34px 34px,
-    linear-gradient(135deg, #c9b6ff 0%, #ffc6d9 48%, #ffd9b0 100%);
+    radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(90, 55, 75, 0.22) 100%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.16) 0 14px, transparent 14px 28px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.16) 0 14px, transparent 14px 28px),
+    linear-gradient(135deg, #cdb4bf 0%, #c4b3cb 50%, #cdbcb4 100%);
 }
 
 .masa.tema-renkli::before {
@@ -2350,58 +2360,121 @@ html {
 }
 
 .tema-renkli .defter {
-  filter: drop-shadow(0 22px 40px rgba(110, 70, 160, 0.35));
+  filter: drop-shadow(0 18px 30px rgba(80, 45, 65, 0.32));
 }
 
+/* Sirt: dikisli kumas cilt */
 .tema-renkli .sirt {
-  border-radius: 20px 0 0 20px;
-  background: linear-gradient(90deg, #ff8fb1 0%, #d49bff 60%, #b183f5 100%);
+  border-radius: 22px 0 0 22px;
+  background:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0 6px, transparent 6px 12px),
+    linear-gradient(90deg, #c68fa0 0%, #b996b3 60%, #a88fb4 100%);
+  box-shadow:
+    inset -6px 0 0 -4px rgba(255, 255, 255, 0.35),
+    inset 0 0 0 1px rgba(80, 45, 65, 0.15);
 }
 
+.tema-renkli .sirt::after {
+  content: '';
+  position: absolute;
+  inset: 8px 8px 8px 6px;
+  border: 1.5px dashed rgba(255, 245, 240, 0.55);
+  border-right: 0;
+  border-radius: 16px 0 0 16px;
+  pointer-events: none;
+}
+
+/* Halkalar: mat altin-gul, tereyagi ve adacayi */
 .tema-renkli .halka {
-  background: linear-gradient(180deg, #ffffff 0%, #ffd6e6 45%, #ff9fbf 70%, #ffe3ee 100%);
+  background: linear-gradient(180deg, #fbf3ef 0%, #f0dde0 40%, #d7aab6 72%, #f4e6e8 100%);
   box-shadow:
-    inset 0 -2px 3px rgba(150, 40, 90, 0.35),
-    0 2px 4px rgba(90, 40, 120, 0.35);
+    inset 0 -2px 3px rgba(120, 60, 85, 0.3),
+    0 2px 4px rgba(80, 45, 65, 0.3);
 }
 
 .tema-renkli .halka:nth-child(3n + 2) {
-  background: linear-gradient(180deg, #ffffff 0%, #fff2c2 45%, #ffcf5a 70%, #fff6d8 100%);
+  background: linear-gradient(180deg, #fbf6ec 0%, #f2e7cc 40%, #d8bf85 72%, #f6eedb 100%);
 }
 
 .tema-renkli .halka:nth-child(3n) {
-  background: linear-gradient(180deg, #ffffff 0%, #d6f5e9 45%, #6fdcb4 70%, #e6fbf3 100%);
+  background: linear-gradient(180deg, #f5f8f4 0%, #dfeae1 40%, #9fc0aa 72%, #e8f0ea 100%);
 }
 
 .tema-renkli .delik {
-  background: #c4a2f0;
-  box-shadow: inset 0 1px 2px rgba(80, 40, 120, 0.45);
+  background: #d9c3cc;
+  box-shadow: inset 0 1px 2px rgba(90, 50, 70, 0.4);
 }
 
 .tema-renkli .sayfa-yigini::before {
-  border-radius: 0 20px 20px 0;
-  background: #f8ecff;
+  border-radius: 0 22px 22px 0;
+  background: #f3e9e4;
 }
 
 .tema-renkli .sayfa-yigini::after {
-  border-radius: 0 20px 20px 0;
-  background: #efdcff;
+  border-radius: 0 22px 22px 0;
+  background: #e9dcd8;
 }
 
-/* Gri yaprak deseni yerine pastel konfeti */
+/* Sayfa: krem kagit + tanecik + seyrek mat desen */
 .tema-renkli .sayfa {
-  border-radius: 0 20px 20px 0;
-  background-image: url('./gorseller/konfeti-pastel.svg');
-  background-size: 480px 480px;
+  border-radius: 0 22px 22px 0;
+  background-image: url('./gorseller/tatli-desen.svg'), url('./gorseller/kagit-doku.svg');
+  background-size: 480px 480px, 220px 220px;
+}
+
+/* Washi bant: sayfanin ustune yapistirilmis cizgili kagit bant */
+.tema-renkli .sayfa::before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  right: 300px;
+  width: 118px;
+  height: 26px;
+  z-index: 4;
+  transform: rotate(-3deg);
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.45) 0 6px, transparent 6px 12px),
+    rgba(214, 160, 176, 0.72);
+  clip-path: polygon(0 8%, 4% 0, 8% 10%, 12% 0, 88% 0, 92% 10%, 96% 0, 100% 8%, 100% 92%, 96% 100%, 92% 90%, 88% 100%, 12% 100%, 8% 90%, 4% 100%, 0 92%);
+  box-shadow: 0 1px 2px rgba(80, 45, 65, 0.15);
+  pointer-events: none;
+}
+
+/* Kose cicek dali */
+.tema-renkli .sayfa::after {
+  content: '';
+  position: absolute;
+  right: 6px;
+  bottom: 26px;
+  width: 170px;
+  height: 150px;
+  z-index: 0;
+  background: url('./gorseller/kose-cicek.svg') no-repeat right bottom / contain;
+  opacity: 0.8;
+  pointer-events: none;
 }
 
 .tema-renkli .sayfa-basi {
-  border-bottom: 2px dashed #f0dff5;
+  border-bottom: 2px dashed #ead6d6;
 }
 
 .tema-renkli .sayfa-basi h1 {
   font-weight: 700;
   letter-spacing: 0;
+  color: #574552;
+}
+
+/* Baslik yaninda kucuk kalp suslemesi */
+.tema-renkli .sayfa-basi h1::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 14px;
+  margin-left: 10px;
+  vertical-align: 0.2em;
+  background: #d9a3b3;
+  clip-path: path('M8 14 C3 10 0 7 0 4 C0 1.5 2 0 4 0 C5.6 0 7 1 8 2.6 C9 1 10.4 0 12 0 C14 0 16 1.5 16 4 C16 7 13 10 8 14 Z');
+  opacity: 0.85;
 }
 
 /* Baloo 2 ailesinde italik yok: altyazi ve bos durum yazilari govde fontuyla */
@@ -2409,13 +2482,13 @@ html {
   font-family: var(--sans);
   font-style: normal;
   font-weight: 600;
-  color: #b08cd8;
+  color: #b8849a;
 }
 
 .tema-renkli .bos {
   font-family: var(--sans);
   font-style: italic;
-  color: #a597bb;
+  color: #ab98a3;
 }
 
 .tema-renkli .bolum-basligi,
@@ -2425,11 +2498,18 @@ html {
   font-weight: 700;
 }
 
+/* Fosforlu basliklar: mat pastel kalem */
+.tema-renkli .fosfor-sari { --fosfor: #ecdca6; }
+.tema-renkli .fosfor-pembe { --fosfor: #e9c3cc; }
+.tema-renkli .fosfor-yesil { --fosfor: #c7ddcc; }
+.tema-renkli .fosfor-mavi { --fosfor: #c8d7e6; }
+.tema-renkli .fosfor-turuncu { --fosfor: #ecd0c0; }
+
 .tema-renkli .durum-cubugu {
-  border-top: 2px dashed #f0dff5;
+  border-top: 2px dashed #ead6d6;
 }
 
-/* Sekmeler */
+/* Sekmeler: tozlu pastel kumas, beyaz dikis, puanli doku */
 .tema-renkli .sekmeler {
   gap: 10px;
   padding-top: 28px;
@@ -2443,12 +2523,24 @@ html {
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  background: var(--sekme-renk);
-  box-shadow: 3px 4px 0 rgba(58, 45, 79, 0.18);
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+  color: #5a4452;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.35) 0 1.2px, transparent 1.6px) 0 0 / 9px 9px,
+    var(--sekme-pastel, var(--sekme-renk));
+  outline: 1.5px dashed rgba(255, 255, 255, 0.75);
+  outline-offset: -5px;
+  box-shadow: 3px 4px 0 rgba(120, 75, 100, 0.22);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
   filter: none;
   transition: transform 0.2s cubic-bezier(0.3, 1.6, 0.5, 1), box-shadow 0.2s ease;
 }
+
+.tema-renkli .sekme:nth-child(1) { --sekme-pastel: var(--tozlu-gul); }
+.tema-renkli .sekme:nth-child(2) { --sekme-pastel: var(--tozlu-mavi); }
+.tema-renkli .sekme:nth-child(3) { --sekme-pastel: var(--tozlu-tereyagi); }
+.tema-renkli .sekme:nth-child(4) { --sekme-pastel: var(--tozlu-adacayi); }
+.tema-renkli .sekme:nth-child(5) { --sekme-pastel: var(--tozlu-seftali); }
+.tema-renkli .sekme:nth-child(6) { --sekme-pastel: var(--tozlu-lavanta); }
 
 .tema-renkli .sekme:hover {
   transform: translateX(3px);
@@ -2457,15 +2549,16 @@ html {
 
 .tema-renkli .sekme.aktif {
   transform: translateX(8px);
-  box-shadow: 4px 5px 0 rgba(58, 45, 79, 0.25);
+  box-shadow: 4px 5px 0 rgba(120, 75, 100, 0.3);
   filter: none;
 }
 
 /* Dugmeler ve alanlar */
 .tema-renkli .dgm {
-  border: 1.5px solid #eadcf5;
+  border: 1.5px solid #e6d2d6;
   border-radius: 999px;
-  background: #fff;
+  background: #fffaf6;
+  color: #5a4452;
   font-weight: 600;
   box-shadow: none;
   transition: transform 0.18s cubic-bezier(0.3, 1.6, 0.5, 1), box-shadow 0.18s ease, background 0.18s ease;
@@ -2473,20 +2566,21 @@ html {
 
 .tema-renkli .dgm:hover {
   transform: translateY(-2px);
-  background: #fff5fb;
-  box-shadow: 0 5px 12px rgba(167, 139, 250, 0.25);
+  background: #fbf0ef;
+  box-shadow: 0 5px 12px rgba(150, 95, 120, 0.18);
 }
 
 .tema-renkli .dgm.birincil {
   border: 0;
   background: var(--vurgu);
   color: #fff;
-  box-shadow: 0 5px 14px rgba(255, 120, 170, 0.35);
+  text-shadow: 0 1px 1px rgba(90, 45, 70, 0.3);
+  box-shadow: 0 4px 12px rgba(160, 100, 130, 0.3);
 }
 
 .tema-renkli .dgm.birincil:hover {
-  background: linear-gradient(135deg, #ff7aa0 0%, #a488ff 100%);
-  box-shadow: 0 7px 18px rgba(255, 120, 170, 0.45);
+  background: linear-gradient(135deg, #c47f94 0%, #9a84bd 100%);
+  box-shadow: 0 6px 16px rgba(160, 100, 130, 0.38);
 }
 
 .tema-renkli .dgm.sessiz {
@@ -2496,12 +2590,12 @@ html {
 }
 
 .tema-renkli .dgm.sessiz:hover {
-  background: rgba(182, 156, 255, 0.14);
+  background: rgba(214, 160, 176, 0.18);
 }
 
 .tema-renkli .dgm.tehlike {
-  color: #e5486b;
-  border-color: #ffd0dc;
+  color: #b85f7a;
+  border-color: #eccbd4;
 }
 
 .tema-renkli .dgm.acik {
@@ -2511,21 +2605,21 @@ html {
 }
 
 .tema-renkli .alan {
-  border: 1.5px solid #eadcf5;
-  border-radius: 12px;
-  background: #fff;
+  border: 1.5px solid #e6d2d6;
+  border-radius: 14px;
+  background: #fffaf6;
 }
 
 .tema-renkli .alan:focus {
-  border-color: #b69cff;
-  box-shadow: 0 0 0 3px rgba(182, 156, 255, 0.25);
+  border-color: #cf9aab;
+  box-shadow: 0 0 0 3px rgba(214, 160, 176, 0.25);
   outline: none;
 }
 
 .tema-renkli .secim {
-  border: 1.5px solid #eadcf5;
+  border: 1.5px solid #e6d2d6;
   border-radius: 999px;
-  background: #fff;
+  background: #fffaf6;
   font-weight: 600;
 }
 
@@ -2542,11 +2636,11 @@ html {
 
 /* Gorevler */
 .tema-renkli .gorev {
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .tema-renkli .gorev:hover {
-  background: rgba(182, 156, 255, 0.12);
+  background: rgba(214, 160, 176, 0.12);
 }
 
 .tema-renkli .oncelik {
@@ -2555,36 +2649,41 @@ html {
 }
 
 .tema-renkli .oncelik.o2 {
-  background: #ff7a8a;
+  background: #d38a9f;
 }
 
 .tema-renkli .oncelik.o0 {
-  background: #bfe0ff;
+  background: #bccfe0;
 }
 
 .tema-renkli .kutu {
-  border: 2px solid #c9b3ec;
+  border: 2px solid #d9aebb;
   border-radius: 50%;
-  background: #fff;
+  background: #fffaf6;
   transition: transform 0.2s cubic-bezier(0.3, 1.8, 0.5, 1), background 0.2s ease;
 }
 
 .tema-renkli .kutu:hover {
   transform: scale(1.15);
-  border-color: #a78bfa;
+  border-color: #c98699;
 }
 
 .tema-renkli .gorev.bitti .kutu {
   border-color: transparent;
-  background: linear-gradient(135deg, #7bdcb5, #3fcf9e);
+  background: linear-gradient(135deg, #a9cdb6, #86b59b);
 }
 
 .tema-renkli .gorev.bitti .kutu svg {
   color: #fff;
 }
 
+/* Liste maddeleri: tozlu gul nokta */
+.tema-renkli .madde::before {
+  background: #cf94a6;
+}
+
 .tema-renkli .rozetcik {
-  background: #f6efff;
+  background: #f5e9e8;
   border-radius: 999px;
 }
 
@@ -2601,39 +2700,39 @@ html {
   background: transparent;
   font-family: var(--baslik);
   font-weight: 700;
-  color: #a78bfa;
+  color: #b8849a;
 }
 
 .tema-renkli .hucre {
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: inset 0 0 0 1.5px #f1e4f2;
+  border-radius: 16px;
+  background: rgba(255, 252, 248, 0.85);
+  box-shadow: inset 0 0 0 1.5px #ecdcd9;
   transition: transform 0.15s ease, background 0.15s ease;
 }
 
 /* Hafta sonu sutunlari (7 baslik hucresinden sonra: 6. ve 7. sutun) */
 .tema-renkli .hucre:nth-child(7n + 6),
 .tema-renkli .hucre:nth-child(7n) {
-  background: #fff8ef;
+  background: #f8ede6;
 }
 
 .tema-renkli .hucre:hover {
   transform: translateY(-2px);
-  background: #fff5fb;
+  background: #f9eeee;
 }
 
 .tema-renkli .hucre.disay {
-  background: #faf6fd;
+  background: rgba(240, 230, 228, 0.5);
   box-shadow: none;
 }
 
 .tema-renkli .hucre.secili {
-  box-shadow: inset 0 0 0 2.5px #b69cff;
+  box-shadow: inset 0 0 0 2.5px #cf9aab;
 }
 
 .tema-renkli .hucre.bugun .gun-no {
   background: var(--vurgu);
-  box-shadow: 0 3px 8px rgba(255, 120, 170, 0.4);
+  box-shadow: 0 3px 8px rgba(160, 100, 130, 0.35);
 }
 
 .tema-renkli .gun-no {
@@ -2642,47 +2741,50 @@ html {
 }
 
 .tema-renkli .hucre-satir::before {
-  background: #ff8fab;
+  background: #cf94a6;
 }
 
 /* Pano ve notlar */
 .tema-renkli .pano {
-  border-radius: 20px;
-  background-color: #fff4dc;
-  background-image: radial-gradient(circle, rgba(255, 170, 120, 0.35) 0 2px, transparent 2.5px);
-  background-size: 26px 26px;
-  box-shadow: inset 0 0 0 3px #ffd9a8;
+  border-radius: 22px;
+  background-color: #f4e8dc;
+  background-image:
+    radial-gradient(circle, rgba(190, 140, 120, 0.3) 0 2px, transparent 2.5px),
+    url('./gorseller/kagit-doku.svg');
+  background-size: 26px 26px, 220px 220px;
+  box-shadow: inset 0 0 0 3px #e6d2c2;
 }
 
 .tema-renkli .pusula {
-  border-radius: 8px;
-  box-shadow: 4px 7px 14px rgba(110, 70, 90, 0.22);
+  border-radius: 10px;
+  box-shadow: 4px 7px 14px rgba(100, 60, 80, 0.22);
 }
 
 .tema-renkli .not-ogesi {
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .tema-renkli .not-ogesi.aktif {
-  background: #f6efff;
-  border-left-color: #b69cff;
+  background: #f5e9e8;
+  border-left-color: #cf9aab;
 }
 
 .tema-renkli .not-icerik {
-  --kare-cizgi: rgba(182, 156, 255, 0.22);
-  border-radius: 14px;
+  --kare-cizgi: rgba(207, 154, 171, 0.22);
+  border-radius: 16px;
 }
 
 /* Pencereler */
 .tema-renkli .perde {
-  background: rgba(80, 50, 120, 0.45);
+  background: rgba(80, 50, 70, 0.4);
 }
 
 .tema-renkli .kart {
-  border-radius: 22px;
-  border-top: 6px solid #ffb3cf;
-  background: #fffdfb;
-  box-shadow: 0 24px 60px rgba(90, 50, 140, 0.35);
+  position: relative;
+  border-radius: 24px;
+  border-top: 6px solid #e3b7c1;
+  background: #fbf5ef url('./gorseller/kagit-doku.svg');
+  box-shadow: 0 24px 60px rgba(80, 45, 65, 0.32);
 }
 
 .tema-renkli .kart h2 {
@@ -2691,16 +2793,27 @@ html {
 
 .tema-renkli .sayfa-govde::-webkit-scrollbar-thumb,
 .tema-renkli .not-liste::-webkit-scrollbar-thumb {
-  background: #e3d2f7;
+  background: #e2cdd2;
 }
 
 /* Telefon */
 @media (max-width: 760px) {
+  .tema-renkli .sayfa::before {
+    right: 40px;
+    width: 90px;
+  }
+
+  .tema-renkli .sayfa::after {
+    width: 120px;
+    height: 105px;
+    bottom: 8px;
+  }
+
   .tema-renkli .sekmeler {
     padding-top: 0;
     gap: 0;
-    background: #fff;
-    box-shadow: 0 -4px 14px rgba(110, 70, 160, 0.15);
+    background: #f8efea;
+    box-shadow: 0 -4px 14px rgba(80, 45, 65, 0.15);
   }
 
   .tema-renkli .sekme {
@@ -2710,6 +2823,7 @@ html {
     font-size: 11px;
     color: var(--murekkep-soluk);
     background: transparent;
+    outline: 0;
     box-shadow: none;
     text-shadow: none;
     transform: none;
@@ -2718,7 +2832,8 @@ html {
   .tema-renkli .sekme.aktif {
     transform: none;
     color: var(--murekkep);
-    box-shadow: inset 0 3px 0 var(--sekme-renk);
+    background: var(--sekme-pastel);
+    box-shadow: none;
   }
 
   .tema-renkli .sekme-emoji {
@@ -2736,8 +2851,8 @@ html {
 
 .tema-renkli .yarina-tasi:hover,
 .tema-renkli .yarina-tasi:focus-visible {
-  color: #8b6cf0;
-  background: rgba(167, 139, 250, 0.12);
+  color: #b8708a;
+  background: rgba(214, 160, 176, 0.2);
 }
 
 /* ================================================ KURUMSAL KLASIK: HATIRLATMA PENCERESI ==

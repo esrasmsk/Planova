@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="150" viewBox="0 0 170 150">
+  <!-- Renkli tema: sayfanin sag alt kosesinde mat pastel cicek dali (el cizimi hissi) -->
+  <g fill="none" stroke="#b79aa6" stroke-width="1.6" stroke-linecap="round" opacity="0.75">
+    <path d="M165 148 C140 120 118 104 84 96"/>
+    <path d="M140 124 C132 104 138 88 150 78"/>
+    <path d="M118 108 C104 96 98 80 102 64"/>
+  </g>
+  <g opacity="0.8">
+    <path d="M100 98 c-10 -10 -26 -8 -30 2 c10 8 24 8 30 -2z" fill="#b8ccb9"/>
+    <path d="M128 116 c-4 -14 4 -26 14 -26 c2 12 -4 22 -14 26z" fill="#b8ccb9"/>
+    <path d="M150 136 c-14 0 -22 -10 -20 -20 c12 0 20 8 20 20z" fill="#c7d6c4"/>
+    <g transform="translate(150 74)" fill="#e2b2bf">
+      <ellipse cy="-7" rx="5" ry="7"/><ellipse cy="-7" rx="5" ry="7" transform="rotate(72)"/><ellipse cy="-7" rx="5" ry="7" transform="rotate(144)"/><ellipse cy="-7" rx="5" ry="7" transform="rotate(216)"/><ellipse cy="-7" rx="5" ry="7" transform="rotate(288)"/>
+      <circle r="3.6" fill="#eed9a8"/>
+    </g>
+    <g transform="translate(102 60) scale(0.8)" fill="#c9b8de">
+      <ellipse cy="-7" rx="5" ry="7"/><ellipse cy="-7" rx="5" ry="7" transform="rotate(72)"/><ellipse cy="-7" rx="5" ry="7" transform="rotate(144)"/><ellipse cy="-7" rx="5" ry="7" transform="rotate(216)"/><ellipse cy="-7" rx="5" ry="7" transform="rotate(288)"/>
+      <circle r="3.6" fill="#eed9a8"/>
+    </g>
+    <circle cx="70" cy="90" r="3" fill="#e2c98f"/>
+    <circle cx="122" cy="92" r="2.4" fill="#e2b2bf"/>
+    <path d="M60 118 c0 -4 5 -5 6 -1 c1 -4 6 -3 6 1 c0 4 -6 7 -6 7 s-6 -3 -6 -7z" fill="#e2b2bf"/>
+  </g>
+</svg>
