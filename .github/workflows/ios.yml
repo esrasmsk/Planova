@@ -1,0 +1,72 @@
+# planova iOS derlemesi (Windows'ta iOS derlenemedigi icin GitHub'in macOS makinelerinde).
+# Cikti: imzasiz planova.ipa (Actions > bu calisma > Artifacts). Sideloadly / AltStore ile
+# Apple ID kullanilarak imzalanip iPhone/iPad'e kurulabilir. Ucretli Apple Developer hesabi
+# alinirsa bu is akisina imzalama + TestFlight adimi eklenecek.
+name: iOS derleme
+
+on:
+  workflow_dispatch: # Actions sekmesinden elle baslatma
+  push:
+    branches: [main]
+    paths:
+      - 'eplanova/src/renderer/**'
+      - 'eplanova/ios/**'
+      - 'eplanova/capacitor.config.ts'
+      - 'eplanova/vite.mobil.config.ts'
+      - 'eplanova/package.json'
+      - 'eplanova/package-lock.json'
+      - '.github/workflows/ios.yml'
+
+jobs:
+  ios:
+    runs-on: macos-15
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: eplanova
+    env:
+      # Masaustu (Electron) ikili dosyasi iOS icin gereksiz
+      ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: eplanova/package-lock.json
+
+      - name: Paketleri kur
+        run: npm ci
+
+      - name: Web arayuzunu derle ve iOS projesine aktar
+        run: |
+          npm run mobil:build
+          npx cap sync ios
+
+      - name: Xcode ile derle (imzasiz)
+        run: |
+          xcodebuild \
+            -project ios/App/App.xcodeproj \
+            -scheme App \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath ios/derleme \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            build
+
+      - name: IPA paketle
+        run: |
+          mkdir -p Payload
+          cp -R ios/derleme/Build/Products/Release-iphoneos/App.app Payload/
+          zip -qry planova.ipa Payload
+          ls -la planova.ipa
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: planova-ios
+          path: eplanova/planova.ipa
+          retention-days: 30

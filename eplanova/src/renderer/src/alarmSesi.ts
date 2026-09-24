@@ -22,10 +22,13 @@ function sesKilidiniAc(): void {
   if (!ctx || ctx.state === 'running') {
     window.removeEventListener('pointerdown', sesKilidiniAc, true)
     window.removeEventListener('keydown', sesKilidiniAc, true)
+    window.removeEventListener('touchend', sesKilidiniAc, true)
   }
 }
 window.addEventListener('pointerdown', sesKilidiniAc, true)
 window.addEventListener('keydown', sesKilidiniAc, true)
+// iOS (WKWebView) ses motorunu yalnizca dokunusun bitiminde acar
+window.addEventListener('touchend', sesKilidiniAc, true)
 
 /** Bir tur: dort kisa bip, yuksek-alcak sirayla. */
 const BIPLER = [
