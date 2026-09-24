@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
+  <!-- Sayfa arka plani icin bitki siluetleri. Opaklik en alttaki grupta (0.06). -->
+  <defs>
+    <!-- sivri uclu yaprak -->
+    <path id="yaprak" d="M0 -48 C26 -30 28 22 0 48 C-28 22 -26 -30 0 -48 Z" />
+    <!-- egrelti dali: sap + karsilikli yaprakciklar -->
+    <g id="egrelti">
+      <path d="M0 0 C6 -40 8 -90 2 -140" fill="none" stroke="#2f4a2b" stroke-width="3" stroke-linecap="round" />
+      <ellipse cx="-14" cy="-18" rx="16" ry="6" transform="rotate(-25 -14 -18)" />
+      <ellipse cx="17" cy="-30" rx="16" ry="6" transform="rotate(25 17 -30)" />
+      <ellipse cx="-11" cy="-48" rx="15" ry="5.5" transform="rotate(-28 -11 -48)" />
+      <ellipse cx="18" cy="-62" rx="14" ry="5.5" transform="rotate(28 18 -62)" />
+      <ellipse cx="-8" cy="-80" rx="13" ry="5" transform="rotate(-32 -8 -80)" />
+      <ellipse cx="16" cy="-94" rx="12" ry="5" transform="rotate(32 16 -94)" />
+      <ellipse cx="-4" cy="-112" rx="10" ry="4.5" transform="rotate(-36 -4 -112)" />
+      <ellipse cx="10" cy="-124" rx="8" ry="4" transform="rotate(36 10 -124)" />
+    </g>
+    <!-- ginkgo yapragi: yelpaze + sap -->
+    <g id="ginkgo">
+      <path d="M0 0 L0 -34" fill="none" stroke="#2f4a2b" stroke-width="3" stroke-linecap="round" />
+      <path d="M0 -30 C-38 -38 -58 -84 -40 -108 C-26 -94 -8 -96 0 -104 C8 -96 26 -94 40 -108 C58 -84 38 -38 0 -30 Z" />
+    </g>
+  </defs>
+
+  <g fill="#2f4a2b" opacity="0.06">
+    <!-- yaprak agaci -->
+    <g transform="translate(110 480)">
+      <path d="M-7 0 L-4 -72 L4 -72 L7 0 Z" />
+      <path d="M0 -58 L-22 -84 M1 -66 L20 -94" fill="none" stroke="#2f4a2b" stroke-width="5" stroke-linecap="round" />
+      <circle cx="0" cy="-112" r="42" />
+      <circle cx="-36" cy="-90" r="28" />
+      <circle cx="36" cy="-92" r="30" />
+      <circle cx="-16" cy="-146" r="27" />
+      <circle cx="22" cy="-140" r="29" />
+    </g>
+
+    <!-- cam agaci -->
+    <g transform="translate(520 600)">
+      <path d="M0 -150 L-30 -96 L-14 -96 L-44 -46 L-20 -46 L-52 0 L-4 0 L-4 18 L4 18 L4 0 L52 0 L20 -46 L44 -46 L14 -96 L30 -96 Z" />
+    </g>
+
+    <!-- dagink yapraklar -->
+    <use href="#yaprak" transform="translate(300 90) rotate(30)" />
+    <use href="#yaprak" transform="translate(470 210) rotate(-40) scale(1.4)" />
+    <use href="#yaprak" transform="translate(60 140) rotate(70) scale(0.9)" />
+    <use href="#yaprak" transform="translate(380 390) rotate(120) scale(1.2)" />
+    <use href="#yaprak" transform="translate(250 570) rotate(-20) scale(0.8)" />
+    <use href="#yaprak" transform="translate(600 380) rotate(10) scale(0.7)" />
+    <use href="#yaprak" transform="translate(180 360) rotate(-65) scale(0.6)" />
+
+    <!-- egrelti dallari -->
+    <use href="#egrelti" transform="translate(260 330) rotate(18)" />
+    <use href="#egrelti" transform="translate(570 150) rotate(-28) scale(0.8)" />
+    <use href="#egrelti" transform="translate(390 610) rotate(-60) scale(0.7)" />
+
+    <!-- ginkgo yapraklari -->
+    <use href="#ginkgo" transform="translate(170 250) rotate(-15)" />
+    <use href="#ginkgo" transform="translate(450 520) rotate(25) scale(0.8)" />
+    <use href="#ginkgo" transform="translate(40 610) rotate(-40) scale(0.6)" />
+  </g>
+</svg>

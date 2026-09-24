@@ -1,0 +1,69 @@
+{
+  "name": "planova",
+  "version": "1.0.0",
+  "description": "Spiralli defter gorunumlu dijital planner (Electron + React + Firebird)",
+  "main": "./out/main/index.js",
+  "author": "Tema Yazilim Otomasyon",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "dist": "electron-vite build && electron-builder --win --x64",
+    "mobil:build": "vite build -c vite.mobil.config.ts",
+    "mobil:sync": "npm run mobil:build && cap sync",
+    "mobil:apk": "npm run mobil:sync && cd android && .\\gradlew.bat assembleDebug"
+  },
+  "dependencies": {
+    "node-firebird": "^1.1.9"
+  },
+  "devDependencies": {
+    "@capacitor-community/sqlite": "^8.1.1",
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/ios": "^8.5.2",
+    "@capacitor/local-notifications": "^8.3.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  },
+  "build": {
+    "appId": "com.temayazilim.planner",
+    "productName": "planova",
+    "directories": {
+      "output": "release",
+      "buildResources": "resources"
+    },
+    "files": [
+      "out/**/*",
+      "package.json",
+      "resources/ikon.png"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "planova-Setup-${version}.${ext}",
+      "icon": "resources/ikon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "planova"
+    }
+  },
+  "allowScripts": {
+    "electron@33.4.11": true,
+    "esbuild@0.21.5": true
+  }
+}
